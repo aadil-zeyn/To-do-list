@@ -1,0 +1,22 @@
+<div class="container">
+    <h2>Todo List</h2>
+    <ul>
+      <li *ngFor="let todo of todos; let i = index">
+        <input type="checkbox" [(ngModel)]="todo.completed" class="checkbox">
+        <span [class.completed]="todo.completed">{{ todo.title }}</span>
+        <button (click)="removeTodo(i)">Remove</button>
+      </li>
+    </ul>
+    <div class="input-container">
+      <input type="text" [(ngModel)]="newTodo" placeholder="New Todo">
+      <button (click)="addTodo()">Add</button>
+    </div>
+    <!-- <h2>Completed Tasks</h2>
+    <ul>
+      <li *ngFor="let todo of ctodos; let i = index">
+        
+        <span [class.completed]="todo.completed">{{ todo.title }}</span>
+        <button (click)="removeTodo(i)">Remove</button>
+      </li>
+    </ul> -->
+  </div>
